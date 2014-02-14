@@ -1,0 +1,69 @@
+/* hoja de estilos con atributos básicos
+al principio se usarán atributos poco atractivos. */
+body {
+	background-color: #fff;
+	background-image: url(smiley.png);
+	background-attachment: fixed;
+	background-repeat: no-repeat;
+	background-position: 50% 50%;
+	color: fff;
+	font-family: Arial;
+	font-size: 12pt;
+	text-indent: 5em;
+	text-decoration: none;
+	text-transform: capitalize;
+
+	padding-top: 5px;
+	border-bottom: 2px dotted #f00;
+	margin: 10px 5px 10px 2px;
+
+/* Usemos la formula LoVe/HAte 
+Primero: links normales en reposo */
+
+a:link {
+	text-decoration: none;
+	color: #00a;
+}
+
+/* Links visitados */
+a:visited {
+	color: #a00;
+}
+
+/* Hover */
+a:hover {
+	text-decoration: underline;
+}
+
+/* Links activos */
+a:active {
+	font-weight: bold;
+}
+
+input, textarea {
+	font-size: large;
+	border: 3px solid #70c332;
+	color: #666;
+	background: #fff;
+}
+
+input:focus, text-area: focus {
+	background: #eee;
+}
+
+blockquote {
+	background: url(comillas.gif) top left;
+	background-repeat: no-repeat;
+	text-indent: 30px;
+	text-align: left;
+	font-size: x-large;
+	padding: 0px;
+}
+
+strong {
+	color: #005;
+	letter-spacing: 1em;
+	text-transform: uppercase;
+}
+
+}

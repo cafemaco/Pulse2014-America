@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8" />
 	<meta description="Proyecto del curso Diseño web básico de Mejorando.la" />
+	<link href="estilos.css" rel="stylesheet" type="text/css" />
 	<title>Pulse2014 - Ejercicio web 3</title>
 </head>
 <body>
@@ -57,6 +58,67 @@
 				720
 				<a href="#" class="down"></a>
 			</div>
+		</article>
+
+<!-- Vamos a incluir un formulario de otro ejercicio, para probar estilos -->		
+		<article>
+			<form action="mailto:cafemaco85@gmail.com" method="post" enctype="text/plain">
+				<input type="text" id="url" name="url" size="30" maxsize="255" value="http://" />
+				<input type="password" name="pass" id="pass" />
+				<p>
+					<label for="nombre">
+						Nombre :
+					</label>
+					<br/>
+				<input type="text" name="nombre" id="nombre" />
+				</p>
+				<p>
+					<label for="comentario">
+						¿Algún comentario?
+					</label>
+					<br/>
+				<textarea name="comentario" id="comentario" cols="30" rows="5">
+					Bla bla bla
+				</textarea>
+				</p>
+				<p>
+					Has jugado a...
+				<br/>
+					<input type="checkbox" name="witcher" id="witcher" value="si" checked="checked" />
+					<label for="witcher">
+						The Witcher 2: Assassins of Kings
+					</label>
+					<input type="checkbox" name="rotw" id="rotw" value="si" />
+					<label for="rotw">
+						Total War: Rome 2
+					</label>
+					<input type="checkbox" name="ds" id="ds" value="si" />
+					<label for="ds">
+						Dark Souls
+					</label>
+				</p>
+				<input type="submit" value="Enviar" />
+				<input type="reset" value="Borrar" />
+			</form>
+		</article>
+		<article>
+			<p>
+				Vamos a probar como funcionan las etiquetas de citas
+				<cite>Usando un pasaje de uno de mis libros favoritos</cite>
+			</p>
+			<blockquote>
+			<p>
+				No me tientes<br/>
+				Cual si fuera un debil niño<br/>
+				O una mujer que no conoce las cosas de la Guerra.<br/>
+				Versado estoy en los combates<br/>
+				y en las matanzas de hombres<br/>
+			</p>
+			</blockquote>
+			<p>
+				Este es un fragmento de
+				<q>La Iliada, de Homero</q>.
+			</p>
 		</article>
 	</section>
 	<footer>
