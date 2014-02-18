@@ -12,15 +12,84 @@ etiqueta
 	atributo: valor;
 }
 */
+
+/* Ejemplo de importación de fuentes desde el equipo.
+@font-face {
+    font-family: 'open_sansregular';
+    src: url('fuentes/OpenSans-Regular-webfont.eot');
+    src: url('fuentes/OpenSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fuentes/OpenSans-Regular-webfont.woff') format('woff'),
+         url('fuentes/OpenSans-Regular-webfont.ttf') format('truetype'),
+         url('fuentes/OpenSans-Regular-webfont.svg#open_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+} */
+
+@font-face {
+	font-family: 'pulse';
+	src:url('fuentes/pulse.eot?-c4xxvx');
+	src:url('fuentes/pulse.eot?#iefix-c4xxvx') format('embedded-opentype'),
+		url('fuentes/pulse.woff?-c4xxvx') format('woff'),
+		url('fuentes/pulse.ttf?-c4xxvx') format('truetype'),
+		url('fuentes/pulse.svg?-c4xxvx#pulse') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'pulse' "Open Sans";
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-f-abajo:before {
+	content: "\e600";
+	color: #DD4F24;
+	font-size: 1.3em;
+	position: relative;
+	top: 0.12em;
+}
+.icon-f-arriba:before {
+	content: "\e601";
+	color: #57c408;
+	font-size: 1.3em;
+	position: relative;
+	top: 0.12em;
+}
+.icon-estrella:before {
+	content: "\e602";
+	color: #FFBE2C;
+	margin-right: 0.25em;
+	position: relative;
+	top: 0.12em;
+}
+.icon-lapiz:before {
+	content: "\e603";
+	margin-right: 0.5em;
+}
+
 a
 {
 	color: #22BCE0;
 }
 
+aside
+{
+	display: none;
+}
+
 body
 {
 	background: #EEEEEE;
-	font-family: Arial;
+	font-family: "Open Sans";
 	font-size: 16px;
 }
 
@@ -95,22 +164,33 @@ header #avatar img
 
 header #logo
 {
+	border-right: 1px solid white;
 	margin: 0 0 0 0;
+	margin-right: 0.5em;
 	left: 0;
-	top: 0;
+	top: 0;	
 }
 
 header #logo img
 {
-	border-right: 1px solid white;
-	padding-right: 0.5em;
 	margin-right: 0.5em;
+	padding-right: 0.5em;
 	width: 52px;
+	-webkit-transition:0.5s ;
+}
+
+header #logo img:hover
+{
+	-webkit-transform:rotate(360deg);
+	/* -moz-transform:rotate(90deg);
+	-o-transform:rotate(90deg);
+	-ms-transform:rotate(90deg); */
 }
 
 nav
 {
 	background: #80BCA3;
+	padding: 0 5.5em 0 0;
 	position: relative;
 }
 
@@ -133,6 +213,12 @@ nav ul li a
 	display: block;
 	padding: 0.5em;
 	text-decoration: none;
+	-webkit-transition:0.3s;
+}
+
+nav ul li a:hover
+{
+	background: #344B54;
 }
 
 nav ul #publicar_nav
@@ -147,8 +233,27 @@ nav ul #publicar_nav a
 	background: #22BCE0;
 	border-radius: 5px;
 	box-shadow: rgba(0,0,0,0.5) 5px 5px 12px;
-	padding: 0.6em 0.8em;
+	padding: 0.8em 0.5em 0.8em 1.7em;
 	text-shadow: rgba(0,0,0,0.5) 2px 2px 5px;
+}
+
+nav ul #publicar_nav a:before
+{
+	position: absolute;
+	left: 0.2em;
+	top: 0.5em;
+}
+
+nav ul #publicar_nav a:hover
+{
+	background: #1d7281;
+}
+
+nav ul #publicar_nav a:hover:before
+{
+	color: #f5f9b4;
+	font-size: 21px;
+	-webkit-transition:0.3s;
 }
 
 #contenido
@@ -226,12 +331,18 @@ principal, es decir "#contenido .item" */
 {
 	background: white;
 	border-radius: 0 0 0.5em 0.5em;
-	left: 3%;
+	left: 2.5%;
 	margin-top: 3px;
-	padding: 0.4em 0.8em;
+	padding: 0.2em 0.5em;
 	position: absolute;
-	right: 3%;
+	right: 2.5%;
 	top: 100%;
+	width: 95%;
+}
+
+#contenido .item .votacion a
+{
+	text-decoration: none;
 }
 
 /* Acá probaremos un ejemplo de herencia de CSS,
@@ -241,4 +352,37 @@ atributos. */
 #contenido .item .votacion .guardar_item
 {
 	float: right;
+}
+
+/* Ejemplo de Media Query donde se empieza a establecer 
+el estilo de impresión.
+@media print{
+	body{
+		font-size: 50px;
+	}
+} */
+
+@media screen and (min-width:800px){
+	#contenido{
+		overflow: hidden;
+	}	
+	#contenido .item{
+		width: 49%;
+		float: left;
+	}
+	#contenido .item:nth-child(odd){
+		margin-right:  2%;
+	}
+}
+
+@media screen and (min-width:1000px){
+	aside{
+		display: block;
+		float: right;
+		margin: 1em;
+		width: 20%;
+	}
+	aside video{
+		width: 100%;
+	}
 }
